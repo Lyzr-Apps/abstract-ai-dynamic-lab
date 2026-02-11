@@ -1,0 +1,67 @@
+{
+  "workflow_name": "AbstractCanvas AI - Creative Platform",
+  "created_at": "2026-02-11",
+  "agents": [
+    {
+      "agent_id": "698c5fe26b632a1e29d7675e",
+      "name": "AI Art Agent",
+      "type": "image_generation",
+      "description": "Generates abstract art portions based on user prompts and style parameters, applies style transfer effects, and provides creative suggestions for artwork enhancement",
+      "provider": "Google",
+      "model": "gemini-2.5-flash",
+      "image_output_config": {
+        "model": "gemini/gemini-3-pro-image-preview",
+        "credential_id": "lyzr_google"
+      },
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "response_schema": {
+        "status": "string (success|error)",
+        "result": {
+          "artDescription": "string",
+          "styleApplied": "string",
+          "colorPalette": "array of hex color strings",
+          "creativeSuggestion": "string (optional)"
+        },
+        "metadata": {
+          "generationTime": "number",
+          "modelUsed": "string"
+        }
+      }
+    }
+  ],
+  "workflow_structure": {
+    "nodes": [
+      {
+        "id": "input_node",
+        "type": "Input",
+        "label": "User Canvas Input",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "ai_art_agent",
+        "type": "Agent",
+        "label": "AI Art Agent",
+        "nodeCategory": "agent"
+      },
+      {
+        "id": "output_node",
+        "type": "Output",
+        "label": "Generated Artwork",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      {
+        "source": "input_node",
+        "target": "ai_art_agent"
+      },
+      {
+        "source": "ai_art_agent",
+        "target": "output_node"
+      }
+    ]
+  },
+  "knowledge_bases": [],
+  "schedules": []
+}

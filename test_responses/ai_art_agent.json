@@ -1,0 +1,98 @@
+{
+  "agent_name": "AI Art Agent",
+  "agent_id": "698c5fe26b632a1e29d7675e",
+  "test_scenarios": [
+    {
+      "test_message": "Generate flowing organic shapes in warm tones with a sunset color palette",
+      "response": {
+        "status": "success",
+        "result": {
+          "artDescription": "A fluid abstract composition featuring smooth, flowing organic shapes reminiscent of flowing lava or sunset clouds. The artwork blends warm oranges, deep reds, golden yellows, and soft pinks in a harmonious dance of color and form.",
+          "styleApplied": "Fluid Organic",
+          "colorPalette": ["#FF6B35", "#F7931E", "#FDC830", "#FF8E53", "#E85D75"],
+          "creativeSuggestion": "Consider adding subtle gradient transitions between the warm tones to create depth, or layer cooler purple accents for contrast"
+        },
+        "metadata": {
+          "generationTime": 3200,
+          "modelUsed": "gemini-3-pro-image-preview"
+        }
+      },
+      "module_outputs": {
+        "artifact_files": [
+          {
+            "url": "https://example.com/generated-art-warm-organic.png",
+            "file_type": "image/png",
+            "file_name": "abstract_warm_organic.png"
+          }
+        ]
+      }
+    },
+    {
+      "test_message": "Create geometric abstract patterns with sharp angles in cool blues and purples",
+      "response": {
+        "status": "success",
+        "result": {
+          "artDescription": "A striking geometric composition featuring sharp triangular forms, crystalline structures, and angular intersections. Cool blues transition into deep purples with high contrast edges creating a modern, structured aesthetic.",
+          "styleApplied": "Geometric",
+          "colorPalette": ["#2C3E50", "#3498DB", "#9B59B6", "#5DADE2", "#8E44AD"],
+          "creativeSuggestion": "Try varying the opacity of overlapping geometric shapes to create depth and visual complexity"
+        },
+        "metadata": {
+          "generationTime": 2800,
+          "modelUsed": "gemini-3-pro-image-preview"
+        }
+      },
+      "module_outputs": {
+        "artifact_files": [
+          {
+            "url": "https://example.com/generated-art-geometric-cool.png",
+            "file_type": "image/png",
+            "file_name": "abstract_geometric_cool.png"
+          }
+        ]
+      }
+    },
+    {
+      "test_message": "Apply Kandinsky-inspired style to create swirling cosmic nebula patterns",
+      "response": {
+        "status": "success",
+        "result": {
+          "artDescription": "An expressive abstract artwork inspired by Kandinsky's compositional approach, featuring swirling cosmic forms, circular elements, and dynamic curves that evoke nebula-like structures. Rich purples, cosmic blues, and vibrant magentas create a sense of celestial energy.",
+          "styleApplied": "Kandinsky-inspired",
+          "colorPalette": ["#1A1A2E", "#6C5CE7", "#A29BFE", "#FD79A8", "#FDCB6E"],
+          "creativeSuggestion": "Incorporate small circular accent elements throughout to echo Kandinsky's signature compositional style"
+        },
+        "metadata": {
+          "generationTime": 3500,
+          "modelUsed": "gemini-3-pro-image-preview"
+        }
+      },
+      "module_outputs": {
+        "artifact_files": [
+          {
+            "url": "https://example.com/generated-art-kandinsky-cosmic.png",
+            "file_type": "image/png",
+            "file_name": "abstract_kandinsky_cosmic.png"
+          }
+        ]
+      }
+    }
+  ],
+  "field_types": {
+    "status": "string (enum: success, error)",
+    "result": {
+      "artDescription": "string - detailed description of generated artwork",
+      "styleApplied": "string - name of artistic style used",
+      "colorPalette": "array of strings - hex color codes extracted from artwork",
+      "creativeSuggestion": "string (optional) - enhancement ideas for the user"
+    },
+    "metadata": {
+      "generationTime": "number - milliseconds taken to generate",
+      "modelUsed": "string - AI model identifier"
+    },
+    "module_outputs": {
+      "artifact_files": "array of objects containing url, file_type, file_name for generated images"
+    }
+  },
+  "notes": "Image generation agent - responses include both JSON data and generated image URLs in module_outputs.artifact_files"
+}
